@@ -1,6 +1,7 @@
 * Eamon's Emacs Config
 
-** TODO Ensure that packages are installed if missing
+** DONE Ensure that packages are installed if missing
+- Done using [[https://github.com/magnars/.emacs.d][magnars]] `setup-package.el`.
 ** TODO Establish folder structure
 - [ ] Separate out personal stuff from "glue"
   - Anything that is not strictly necessary is personal

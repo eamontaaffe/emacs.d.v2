@@ -4,7 +4,16 @@
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; Set path to dependencies
+(setq settings-dir
+      (expand-file-name "settings" user-emacs-directory))
+
+;; Set up load path
+(add-to-list 'load-path settings-dir)
+
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -14,9 +23,22 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+;; Setup packages
+(require 'setup-package)
+
+;; Install extensions if they're missing
+(defun init--install-packages ()
+  (packages-install
+   '(magit
+     better-defaults
+     smex
+     )))
+
+(condition-case nil
+    (init--install-packages)
+  (error
+   (package-refresh-contents)
+   (init--install-packages)))
 
 ;; Require packages
 (require 'better-defaults)
