@@ -1,0 +1,14 @@
+* Eamon's Emacs Config
+
+** TODO Ensure that packages are installed if missing
+** TODO Establish folder structure
+- [ ] Separate out personal stuff from "glue"
+  - Anything that is not strictly necessary is personal
+  - Glue things include installing missing directories
+  - Setting up reasonable cache directories
+** TODO Front end modes
+ES6, React, CSS
+
+** TODO Back end modes
+Elixir mode
+** TODO Ensure compatible across mac/linux (fuck windows)
