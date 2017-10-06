@@ -41,6 +41,7 @@
    '(magit
      better-defaults
      smex
+     undo-tree
      )))
 
 (condition-case nil
