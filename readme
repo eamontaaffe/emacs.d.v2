@@ -6,16 +6,20 @@
 git clone --recursive https://github.com/eamontaaffe/.emacs.d.git 
 #+END_SRC
 
-** DONE Ensure that packages are installed if missing
+** TODO
+
+*** DONE Ensure that packages are installed if missing
 - Done using [[https://github.com/magnars/.emacs.d][magnars]] `setup-package.el`.
-** TODO Establish folder structure
+*** TODO Establish folder structure
 - [ ] Separate out personal stuff from "glue"
   - Anything that is not strictly necessary is personal
   - Glue things include installing missing directories
   - Setting up reasonable cache directories
-** TODO Front end modes
+  
+*** TODO Front end modes
 ES6, React, CSS
 
-** TODO Back end modes
+*** TODO Back end modes
 Elixir mode
-** TODO Ensure compatible across mac/linux (fuck windows)
+
+*** TODO Ensure compatible across mac/linux (fuck windows)
