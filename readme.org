@@ -1,5 +1,11 @@
 * Eamon's Emacs Config
 
+** Getting started
+
+#+BEGIN_SRC bash
+git clone --recursive https://github.com/eamontaaffe/.emacs.d.git 
+#+END_SRC
+
 ** DONE Ensure that packages are installed if missing
 - Done using [[https://github.com/magnars/.emacs.d][magnars]] `setup-package.el`.
 ** TODO Establish folder structure
