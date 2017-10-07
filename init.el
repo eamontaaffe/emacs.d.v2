@@ -12,8 +12,8 @@
       (expand-file-name "settings" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path settings-dir)
 (add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path settings-dir)
 
 ;; Add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
@@ -42,6 +42,16 @@
      better-defaults
      smex
      undo-tree
+     helm
+     helm-ls-git
+     projectile
+     helm-projectile
+     web-mode
+     flycheck
+     flycheck-flow
+     flycheck-credo
+     exec-path-from-shell
+     alchemist
      )))
 
 (condition-case nil
@@ -56,6 +66,12 @@
 (require 'smex)
 
 ;; Do configs
+
+(require 'sane-defaults)
+(require 'setup-helm)
+(require 'setup-projectile)
+(require 'setup-web)
+(require 'setup-elixir)
 
 ;;; Smex
 (smex-initialize)
@@ -76,16 +92,3 @@
         (display-buffer buffer '(display-buffer-same-window))))
 
 (global-set-key (kbd "C-x g") 'magit-status)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (smex magit better-defaults))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
