@@ -47,6 +47,7 @@
      projectile
      helm-projectile
      web-mode
+     graphql-mode
      flycheck
      flycheck-flow
      flycheck-credo
