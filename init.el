@@ -46,6 +46,7 @@
      helm-ls-git
      projectile
      helm-projectile
+     helm-ag
      web-mode
      graphql-mode
      flycheck
@@ -54,6 +55,7 @@
      exec-path-from-shell
      alchemist
      multiple-cursors
+     org-tree-slide
      )))
 
 (condition-case nil
@@ -75,6 +77,7 @@
 (require 'setup-web)
 (require 'setup-elixir)
 (require 'setup-multiplecursors)
+(require 'setup-org-tree-slides)
 
 ;;; Smex
 (smex-initialize)
