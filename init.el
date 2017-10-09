@@ -53,6 +53,7 @@
      flycheck-credo
      exec-path-from-shell
      alchemist
+     multiple-cursors
      )))
 
 (condition-case nil
@@ -73,6 +74,7 @@
 (require 'setup-projectile)
 (require 'setup-web)
 (require 'setup-elixir)
+(require 'setup-multiplecursors)
 
 ;;; Smex
 (smex-initialize)
