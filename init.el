@@ -54,6 +54,7 @@
      exec-path-from-shell
      alchemist
      multiple-cursors
+     company
      )))
 
 (condition-case nil
@@ -75,6 +76,7 @@
 (require 'setup-web)
 (require 'setup-elixir)
 (require 'setup-multiplecursors)
+(require 'setup-company)
 
 ;;; Smex
 (smex-initialize)
