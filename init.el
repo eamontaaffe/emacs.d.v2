@@ -55,6 +55,7 @@
      exec-path-from-shell
      alchemist
      multiple-cursors
+     company
      org-tree-slide
      )))
 
@@ -77,6 +78,7 @@
 (require 'setup-web)
 (require 'setup-elixir)
 (require 'setup-multiplecursors)
+(require 'setup-company)
 (require 'setup-org-tree-slides)
 
 ;;; Smex
