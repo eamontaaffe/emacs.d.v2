@@ -9,11 +9,17 @@
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 
+;; Disable auto-quoting
+;; ie. ( style= → style="|")
+(setq web-mode-enable-auto-quoting nil)
+
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
 
 ;; set the tab width to 2
 (setq-default tab-width 2)
+(setq css-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
 
 ;; ;; Always start smartparens mode in js-mode.
 ;; (require 'smartparens-config)
@@ -38,6 +44,7 @@
 
 ;; http://www.flycheck.org/manual/latest/index.html
 (require 'flycheck)
+(require 'flycheck-flow)
 
 ;; turn on flychecking globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -49,6 +56,8 @@
 
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
+(flycheck-add-next-checker 'javascript-flow 'javascript-flow-coverage)
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -61,6 +70,7 @@
 ;; https://github.com/purcell/exec-path-from-shell
 ;; only need exec-path-from-shell on OSX
 ;; this hopefully sets up path and other vars better
+(setq exec-path-from-shell-check-startup-files nil)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
@@ -78,11 +88,11 @@
       (setq-local flycheck-javascript-eslint-executable eslint))))
 (add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
-(require 'flycheck-flow)
-(with-eval-after-load 'flycheck
-  (flycheck-add-mode 'javascript-flow 'flow-minor-mode)
-  (flycheck-add-mode 'javascript-eslint 'flow-minor-mode)
-  (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
+;; (require 'flycheck-flow)
+;; (with-eval-after-load 'flycheck
+;;   (flycheck-add-mode 'javascript-flow 'flow-minor-mode)
+;;   (flycheck-add-mode 'javascript-eslint 'flow-minor-mode)
+;;   (flycheck-add-next-checker 'javascript-flow 'javascript-eslint))
 
 (add-to-list 'auto-mode-alist '("\\.graphql.js\\'" . graphql-mode))
 (add-to-list 'auto-mode-alist '("\\.graphql\\'" . graphql-mode))

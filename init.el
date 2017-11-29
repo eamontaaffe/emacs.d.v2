@@ -57,6 +57,8 @@
      multiple-cursors
      company
      org-tree-slide
+     markdown-mode
+     intero
      )))
 
 (condition-case nil
@@ -80,6 +82,8 @@
 (require 'setup-multiplecursors)
 (require 'setup-company)
 (require 'setup-org-tree-slides)
+(require 'setup-markdown-mode)
+(require 'setup-haskell)
 
 ;;; Smex
 (smex-initialize)

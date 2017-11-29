@@ -18,4 +18,7 @@
 
 (setq flycheck-elixir-credo-strict t)
 
+;; Re-run the tests whenever there is a save
+;; (setq alchemist-hooks-test-on-save 1)
+
 (provide 'setup-elixir)
