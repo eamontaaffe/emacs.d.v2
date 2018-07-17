@@ -55,10 +55,14 @@
      exec-path-from-shell
      alchemist
      multiple-cursors
-     company
+     ;; company
      org-tree-slide
      markdown-mode
      intero
+     twilight-bright-theme
+     reason-mode
+     merlin
+     utop
      )))
 
 (condition-case nil
@@ -71,6 +75,10 @@
 (require 'better-defaults)
 (require 'magit)
 (require 'smex)
+(require 'twilight-bright-theme)
+
+;; Load theme
+(load-theme 'twilight-bright)
 
 ;; Do configs
 
@@ -81,9 +89,11 @@
 (require 'setup-elixir)
 (require 'setup-multiplecursors)
 (require 'setup-company)
-(require 'setup-org-tree-slides)
+;; (require 'setup-org-tree-slides)
 (require 'setup-markdown-mode)
 (require 'setup-haskell)
+(require 'setup-org)
+(require 'setup-reason)
 
 ;;; Smex
 (smex-initialize)
@@ -104,3 +114,9 @@
         (display-buffer buffer '(display-buffer-same-window))))
 
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; Custom shortcuts
+(global-set-key (kbd "C-x 9") 'quit-window)
+
+;; Open up the Cadmus org file straight away
+(find-file "~/org/cadmus.org")

@@ -57,7 +57,6 @@
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 (flycheck-add-next-checker 'javascript-eslint 'javascript-flow)
-(flycheck-add-next-checker 'javascript-flow 'javascript-flow-coverage)
 
 ;; customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -66,6 +65,8 @@
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
 					'(json-jsonlist)))
+
+(setq-default js-indent-level 2)
 
 ;; https://github.com/purcell/exec-path-from-shell
 ;; only need exec-path-from-shell on OSX
